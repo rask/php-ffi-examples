@@ -10,6 +10,7 @@ fn main() {
       .with_crate(crate_dir)
       .with_language(Language::C)
       .with_no_includes()
+      .with_header("#define FFI_LIB \"libmy_library.so\"")
       .generate()
       .expect("Unable to generate bindings")
       .write_to_file("target/debug/my_library.h");
